@@ -28,6 +28,7 @@ name:'LoadingSlice',
 })
 
 const {reducer:LoadingReducer} = LoadingSlice;
- export {
+
+export {
      LoadingReducer
  }

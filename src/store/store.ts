@@ -3,9 +3,9 @@ import {LoadingReducer} from "./slices/LoadingSlice";
 import {MoviePagesReducer} from "./slices/Movie/MoviePagesSlice";
 import {MovieDetailsReducer} from "./slices/Movie/MovieDetailsSlice";
 import {GenreListSliceReducer} from "./slices/Genre/GenreListSlice";
-import {MovieByGenreReducer} from "./slices/Genre/MovieByGenreSlice";
+import { MoviesByGenreReducer} from "./slices/Genre/MoviesByGenreSlice";
+import {SearchedMoviesReducer} from "./slices/Search/SearchedMoviesSlice";
 
-// import {SearchedMoviesReducer} from "./slices/Search/SearchedMoviesSlice";
 
 
 const store = configureStore({
@@ -14,8 +14,8 @@ const store = configureStore({
         moviePages: MoviePagesReducer,
         movieDetails: MovieDetailsReducer,
         genresList: GenreListSliceReducer,
-        chosenGenreMovie: MovieByGenreReducer,
-        // searchedMovies:SearchedMoviesReducer
+        chosenGenreMovies: MoviesByGenreReducer,
+        searchedMovies:SearchedMoviesReducer
     }
 })
 
