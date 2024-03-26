@@ -1,8 +1,9 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import {AxiosError} from "axios";
+import {movieService} from "../../../configs/movieService";
+import {GenreListInterface} from "../../../interfaces/Genre/GenreListInteface";
 
-import {movieService} from "../../services";
-import {GenreListInterface} from "../../interfaces/GenreListInterface";
+
 
 
 

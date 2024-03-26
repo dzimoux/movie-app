@@ -1,15 +1,19 @@
 import React from 'react';
-import {MovieInterface} from "../../interfaces/MovieInterface";
 import {useNavigate} from "react-router-dom";
-import {MovieProps} from "../../interfaces/MovieProps";
 
+import {MovieInterface} from "../../interfaces/Movie/MoviesResponseInterface";
+
+
+export interface MovieProps  {
+    oneMovie: MovieInterface
+}
 
 const Movie: React.FC<MovieProps> = ({oneMovie}) => {
-const {poster_path,original_title,vote_average,id} = oneMovie;
-const navigator = useNavigate();
-const navigateMovieId = ()=>{
-    return navigator(`/movies/movie_details/${id}`)
-}
+    const {poster_path,original_title,vote_average,id} = oneMovie;
+    const navigator = useNavigate();
+    const navigateMovieId = ()=>{
+        return navigator(`/movies/movie_details/${id}`)
+    }
 
     return (
         <div onClick={navigateMovieId}>

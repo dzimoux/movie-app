@@ -1,9 +1,16 @@
 import {createAsyncThunk, createSlice, isFulfilled} from "@reduxjs/toolkit";
-import {MovieDetailsInterface} from "../../interfaces/MovieDetailsInterface";
-import {movieService} from "../../services";
 import {AxiosError} from "axios/index";
-import {MovieDetailsStateInterface} from "../../interfaces/MovieDetailsStateInterface";
 
+import {MovieDetailsInterface} from "../../../interfaces/Movie/MovieDetailsInterface";
+import {movieService} from "../../../configs/movieService";
+
+
+
+export interface MovieDetailsStateInterface {
+    movieDetails: MovieDetailsInterface | null;
+    loading: boolean;
+    error: string | null;
+}
 
 const initialState: MovieDetailsStateInterface = {
     movieDetails: null,
@@ -15,7 +22,7 @@ const getMovieDetails = createAsyncThunk<MovieDetailsInterface, number>(
     'MovieDetailsSlice/getMovieDetails',
     async (id,{rejectWithValue})=>{
 try{
-    const {data} = await movieService.getMoviesPagesbyId(id)
+    const {data} = await movieService.getMoviebById(id)
     return data
 }catch (e) {
     // @ts-ignore
