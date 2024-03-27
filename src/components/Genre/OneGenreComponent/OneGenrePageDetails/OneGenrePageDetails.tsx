@@ -1,6 +1,8 @@
 import React from 'react';
-import {MovieInterface, MoviesResponseInterface} from "../../interfaces/Movie/MoviesResponseInterface";
 import {useNavigate} from "react-router-dom";
+
+import {MovieInterface, MoviesResponseInterface} from "../../../../interfaces/Movie/MoviesResponseInterface";
+import './OneGenrePageDetails.scss'
 
 export interface OneGenreDetailsProps{
     oneGenrePageDetails:MovieInterface
@@ -14,10 +16,13 @@ const OneGenrePageDetails:React.FC<OneGenreDetailsProps> = ({oneGenrePageDetails
     }
 
     return (
-        <div onClick={navigation}>
-            <div><img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/></div>
-            <div>{original_title}</div>
+        <div onClick={navigation} className="movie-details">
+            <div className="movie-сard">
+                <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={original_title} className="movie-poster" />
+            </div>
+            <div className="movie-title">{original_title}</div>
         </div>
+
     );
 };
 

@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
-import {useAppDispatch} from "../../hooks/useDispatch";
-import {useAppSelector} from "../../hooks/useSelector";
 import {useParams} from "react-router-dom";
-import {movieService} from "../../configs/movieService";
-import {MovieDetailsActions} from "../../store/slices/Movie/MovieDetailsSlice";
-import {Header} from "../../components/Header/Header";
-import {MovieDetailsInfo} from "../../components/Movie/MovieDetailsInfo";
+
+import {useAppDispatch} from "../../../hooks/useDispatch";
+import {useAppSelector} from "../../../hooks/useSelector";
+import {MovieDetailsActions} from "../../../store/slices/Movie/MovieDetailsSlice";
+import {Header} from "../../../components/Header/Header";
+import {MovieDetailsInfo} from "../../../components/Movie/MovieDetailsInfo/MovieDetailsInfo";
+import './MovieDetailsPage.scss'
 
 const MovieDetailsPage = () => {
     const {movieDetails} = useAppSelector(state => state.movieDetails)

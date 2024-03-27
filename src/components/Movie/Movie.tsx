@@ -2,6 +2,7 @@ import React from 'react';
 import {useNavigate} from "react-router-dom";
 
 import {MovieInterface} from "../../interfaces/Movie/MoviesResponseInterface";
+import './Movie.scss'
 
 
 export interface MovieProps  {
@@ -16,11 +17,12 @@ const Movie: React.FC<MovieProps> = ({oneMovie}) => {
     }
 
     return (
-        <div onClick={navigateMovieId}>
-            <div><img src={`https://image.tmdb.org/t/p/w500${poster_path}`}/></div>
-            <div>{original_title}</div>
-            <div>{vote_average}</div>
+        <div className="movie-card"  onClick={navigateMovieId}>
+            <div><img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={original_title} className="movie-poster"/></div>
+            <div className="movie-title">{original_title}</div>
+            <div className="movie-rating">{vote_average}</div>
         </div>
+
     );
 };
 

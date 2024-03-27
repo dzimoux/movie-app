@@ -1,0 +1,57 @@
+.movie-details-container {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  background-image: url('https://image.tmdb.org/t/p/original${backdrop_path}');}
+
+
+.movie-details-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+
+.content-container {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info-container {
+  padding-top: 100px;
+  flex: 1;
+}
+
+.movie-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail {
+  margin-bottom: 5px;
+}
+
+.poster-container {
+  padding-top: 100px;
+  margin-left: 20px;
+}
+
+.poster {
+  width: 200px;
+  height: auto;
+}

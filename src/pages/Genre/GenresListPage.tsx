@@ -3,7 +3,8 @@ import {useAppDispatch} from "../../hooks/useDispatch";
 import {useAppSelector} from "../../hooks/useSelector";
 import {GenreListSliceActions} from "../../store/slices/Genre/GenreListSlice";
 import {GenreBasic} from "../../interfaces/Genre/GenreListInteface";
-import {OneGenreComponent} from "../../components/Genre/OneGenreComponent";
+import {OneGenreComponent} from "../../components/Genre/OneGenreComponent/OneGenreComponent";
+import {Header} from "../../components/Header/Header";
 
 const GenresListPage = () => {
     const dispatch = useAppDispatch();
@@ -16,6 +17,7 @@ const GenresListPage = () => {
 
     return (
         <div>
+            <Header/>
             {genresState.genres.map((oneGenre:GenreBasic)=><OneGenreComponent key={oneGenre.id} oneGenre={oneGenre}/>)}
         </div>
     );

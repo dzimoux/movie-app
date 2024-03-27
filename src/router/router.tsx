@@ -1,10 +1,10 @@
 import {createBrowserRouter, Navigate} from "react-router-dom";
 
 import {MainLayout} from "../layouts/MainLayout";
-import {MoviesHomePage} from "../pages/Movie/MoviesHomePage";
-import {MovieDetailsPage} from "../pages/Movie/MovieDetailsPage";
+import {MoviesHomePage} from "../pages/Movie/MoviesHomePage/MoviesHomePage";
+import {MovieDetailsPage} from "../pages/Movie/MovieDetailsPage/MovieDetailsPage";
 import {GenresListPage} from "../pages/Genre/GenresListPage";
-import {OneGenrePage} from "../pages/Genre/OneGenrePage";
+import {OneGenrePage} from "../pages/Genre/OneGenrePage/OneGenrePage";
 import {SearchPage} from "../pages/Search/SearchPage";
 
 

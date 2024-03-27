@@ -6,7 +6,7 @@ import {SearchedMoviesActions} from "../../store/slices/Search/SearchedMoviesSli
 import {Header} from "../../components/Header/Header";
 import {MovieInterface} from "../../interfaces/Movie/MoviesResponseInterface";
 import {SearchedMovieDetails} from "../../components/Search/SearchedMovieDetails";
-
+import './SearchPage.scss'
 const SearchPage = () => {
     const dispatch = useAppDispatch()
     const {requestedSearchResults} = useAppSelector(state => state.searchedMovies);
@@ -26,14 +26,15 @@ const SearchPage = () => {
 
 
     return (
-        <div>
+        <div id="search-container">
             <Header/>
-            <form onSubmit={SubmitFun}>
-                <input type={"text"} placeholder={'Name of movie'} value={searchResult} onChange={ChangedSearchFun}/>
-                <button type={"submit"}>SEARCH</button>
+            <form id="search-form" onSubmit={SubmitFun}>
+                <input id="search-input" type="text" placeholder="Name of movie" value={searchResult} onChange={ChangedSearchFun}/>
+                <button id="search-button" type="submit">SEARCH</button>
             </form>
             {requestedSearchResults && requestedSearchResults.results.map((searchedMovie:MovieInterface) => <SearchedMovieDetails searchedMovie={searchedMovie}/>)}
         </div>
+
     );
     };
 

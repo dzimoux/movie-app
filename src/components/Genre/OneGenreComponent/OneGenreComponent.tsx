@@ -1,6 +1,9 @@
 import React from 'react';
-import {GenreBasic} from "../../interfaces/Genre/GenreListInteface";
 import {useNavigate} from "react-router-dom";
+
+import {GenreBasic} from "../../../interfaces/Genre/GenreListInteface";
+import './OneGenreComponent.scss'
+
 
 export interface oneGenreProps{
 oneGenre:GenreBasic
@@ -13,11 +16,12 @@ const navigate = useNavigate();
     }
 
     return (
-        <div>
-                <div onClick={navigateOneGenreMovies}>
-                    <p>{name}</p>
-                </div>
+        <div className="genre-container">
+            <div className="genre-card" onClick={navigateOneGenreMovies}>
+                <p className="genre-text">{name}</p>
+            </div>
         </div>
+
     );
 };
 

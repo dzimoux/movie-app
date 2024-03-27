@@ -1,0 +1,20 @@
+.header-container {
+  background-color: #000;
+  padding: 20px 0;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ff6600;
+}

@@ -1,0 +1,26 @@
+.component-container {
+  background-color: #121212;
+  padding: 20px;
+  text-align: center;
+}
+
+.buttons-container {
+  margin-bottom: 20px;
+}
+
+.button-prev,
+.button-next {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-prev:hover,
+.button-next:hover {
+  background-color: #ff6600;
+}

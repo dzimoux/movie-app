@@ -9,6 +9,7 @@ export interface MovieDetailsInterface{
     runtime: number;
     spoken_languages: LanguagesInterface[];
     vote_average: number;
+    backdrop_path:string | null
 }
 
 export interface GenresResponse{
