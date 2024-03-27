@@ -1,5 +1,5 @@
-#prev-button,
-#next-button {
+.prev-button,
+.next-button {
   background-color: #333;
   color: #fff;
   border: none;
@@ -10,13 +10,13 @@
   transition: background-color 0.3s ease;
 }
 
-#prev-button:disabled,
-#next-button:disabled {
+.prev-button:disabled,
+.next-button:disabled {
   opacity: 0.5;
 }
 
-#prev-button:hover,
-#next-button:hover {
+.prev-button:hover,
+.next-button:hover {
   background-color: #ff6600;
 }
 
@@ -39,6 +39,12 @@
   transform: translateY(-5px);
   filter: brightness(1.2);
 }
- #genre_page{
-   background-color: #121212;
- }
+
+#genrePage {
+  background-color: #121212;
+}
+
+.pagination-container {
+  padding-top: 30px;
+  margin-bottom: 20px;
+}

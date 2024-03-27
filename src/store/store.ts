@@ -1,4 +1,5 @@
 import {configureStore} from "@reduxjs/toolkit";
+
 import {LoadingReducer} from "./slices/LoadingSlice";
 import {MoviePagesReducer} from "./slices/Movie/MoviePagesSlice";
 import {MovieDetailsReducer} from "./slices/Movie/MovieDetailsSlice";

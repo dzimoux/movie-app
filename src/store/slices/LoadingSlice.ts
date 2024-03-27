@@ -1,5 +1,5 @@
 import {createSlice, isFulfilled, isPending, isRejected} from "@reduxjs/toolkit";
-import type {PayloadAction} from "@reduxjs/toolkit";
+
 
 interface IState  {
 isLoading:boolean,

@@ -1,6 +1,5 @@
-import {createAsyncThunk, createSlice, isFulfilled, isPending, isRejected} from "@reduxjs/toolkit";
-import type {PayloadAction} from "@reduxjs/toolkit";
-import {AxiosError, AxiosResponse} from "axios";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import {AxiosError} from "axios";
 
 import {MoviesResponseInterface} from "../../../interfaces/Movie/MoviesResponseInterface";
 import {movieService} from "../../../configs/movieService";
@@ -21,18 +20,17 @@ const initialState: IState = {
 
 const getMoviePages = createAsyncThunk<MoviesResponseInterface, number>(
     'MoviePagesSlice/getMoviePages',
-    async (page, { rejectWithValue }) => {
+    async (page, {rejectWithValue}) => {
         try {
             const {data} = await movieService.getMoviesPages(page);
             return data
-            } catch (e) {
+        } catch (e) {
             // @ts-ignore
             if (e.response) {
                 const err = e as AxiosError;
                 // @ts-ignore
                 return rejectWithValue(err.response.data);
-            }
-            else {
+            } else {
                 // @ts-ignore
                 return rejectWithValue(e.message);
             }
@@ -42,9 +40,9 @@ const getMoviePages = createAsyncThunk<MoviesResponseInterface, number>(
 
 
 const MoviePagesSlice = createSlice({
-    name:'MoviePagesSlice',
+    name: 'MoviePagesSlice',
     initialState,
-    reducers:{},
+    reducers: {},
     extraReducers: builder =>
         builder
             .addCase(getMoviePages.fulfilled, (state, action) => {
@@ -52,10 +50,10 @@ const MoviePagesSlice = createSlice({
             })
 })
 
-const {reducer:MoviePagesReducer,actions} = MoviePagesSlice
+const {reducer: MoviePagesReducer, actions} = MoviePagesSlice
 
 const MoviePagesActions = {
-...actions,
+    ...actions,
     getMoviePages
 
 }

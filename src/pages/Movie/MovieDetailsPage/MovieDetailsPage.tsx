@@ -13,16 +13,18 @@ const MovieDetailsPage = () => {
     const dispatch = useAppDispatch();
     const {id} = useParams();
 
-    useEffect(()=>{
-        if(id){
-        dispatch(MovieDetailsActions.getMovieDetails(Number(id)))}
-    },[id])
+    useEffect(() => {
+        if (id) {
+            dispatch(MovieDetailsActions.getMovieDetails(Number(id)))
+        }
+    }, [id])
+
 
     return (
         <div>
             <Header/>
             <div>
-                 {movieDetails && <MovieDetailsInfo movieDetails={movieDetails}/>}
+                {movieDetails && <MovieDetailsInfo movieDetails={movieDetails}/>}
             </div>
         </div>
     );

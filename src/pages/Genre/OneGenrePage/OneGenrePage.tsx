@@ -1,18 +1,19 @@
 import React, {useEffect} from 'react';
 import {useParams, useSearchParams} from "react-router-dom";
+
+import './OneGenrePage.scss'
 import {useAppSelector} from "../../../hooks/useSelector";
 import {useAppDispatch} from "../../../hooks/useDispatch";
 import {MoviesByGenreActions} from "../../../store/slices/Genre/MoviesByGenreSlice";
-import {MovieInterface, MoviesResponseInterface} from "../../../interfaces/Movie/MoviesResponseInterface";
+import {MovieInterface} from "../../../interfaces/Movie/MoviesResponseInterface";
 import {OneGenrePageDetails} from "../../../components/Genre/OneGenreComponent/OneGenrePageDetails/OneGenrePageDetails";
-import './OneGenrePage.scss'
 import {Header} from "../../../components/Header/Header";
 
 const OneGenrePage = () => {
     const {id} = useParams();
     const dispatch = useAppDispatch();
     const {chosenMovieState} = useAppSelector(state => state.chosenGenreMovies)
-    const [query,setQuery] = useSearchParams({page: '1'});
+    const [query, setQuery] = useSearchParams({page: '1'});
     const next = () => {
         setQuery(prev => {
 
@@ -33,13 +34,14 @@ const OneGenrePage = () => {
     }
 
 
-    useEffect(()=>{
-        if(chosenMovieState && id && (query.get('page'))){
-            dispatch(MoviesByGenreActions.getMoviesByGenreFun({genre_id:Number(id),page:Number((query.get('page')))}))
+    useEffect(() => {
+        if (chosenMovieState && id && (query.get('page'))) {
+            dispatch(MoviesByGenreActions.getMoviesByGenreFun({
+                genre_id: Number(id),
+                page: Number((query.get('page')))
+            }))
         }
-    },[id,(query.get('page'))])
-
-
+    }, [id, (query.get('page'))])
 
 
     return (
